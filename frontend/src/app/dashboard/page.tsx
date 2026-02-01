@@ -32,19 +32,27 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          {/* Chart Placeholder */}
-          <div className="h-64 flex items-end justify-between gap-2">
-            {[65, 45, 80, 60, 90, 75, 85].map((height, index) => (
+          {/* Chart */}
+          <div className="h-64 flex items-end justify-between gap-3 px-2">
+            {[
+              { value: 65, label: 'Mon', color: 'from-purple-500 to-pink-500' },
+              { value: 45, label: 'Tue', color: 'from-purple-500 to-pink-500' },
+              { value: 80, label: 'Wed', color: 'from-purple-500 to-pink-500' },
+              { value: 60, label: 'Thu', color: 'from-purple-500 to-pink-500' },
+              { value: 90, label: 'Fri', color: 'from-purple-500 to-pink-500' },
+              { value: 75, label: 'Sat', color: 'from-blue-500 to-cyan-500' },
+              { value: 85, label: 'Sun', color: 'from-blue-500 to-cyan-500' },
+            ].map((bar, index) => (
               <div key={index} className="flex-1 flex flex-col items-center gap-2">
                 <div
-                  className="w-full rounded-t-lg bg-gradient-to-t from-purple-500 to-pink-500 transition-all duration-500 hover:scale-105 cursor-pointer"
+                  className={`w-full rounded-t-xl bg-gradient-to-t ${bar.color} transition-all duration-300 hover:opacity-80 cursor-pointer shadow-lg`}
                   style={{
-                    height: `${height}%`,
-                    animationDelay: `${index * 100}ms`
+                    height: `${bar.value}%`,
+                    minHeight: '20px'
                   }}
                 />
                 <span className="text-xs text-gray-600 font-medium">
-                  {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'][index]}
+                  {bar.label}
                 </span>
               </div>
             ))}

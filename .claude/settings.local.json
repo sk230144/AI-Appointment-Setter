@@ -7,7 +7,19 @@
       "Bash(echo:*)",
       "Bash(done)",
       "Bash(npx tsc:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(npm install)",
+      "Bash(npm run dev:*)",
+      "Bash(timeout /t 5)",
+      "Bash(curl:*)",
+      "Bash(slots)",
+      "Bash(settings \")",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd collapsible sidebar and fix dashboard UI\n\n- Add collapsible sidebar with smooth animations\n- Fix dashboard graphs with proper animations\n- Add DashboardLayout component for responsive margin\n- Add SidebarContext for state management\n- Add layout files for all pages \\(appointments, slots, settings, customers, calls\\)\n- Add .gitignore to exclude node_modules, .env, .next, etc.\n- Add customers and calls placeholder pages\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(taskkill:*)",
+      "Bash(cmd //c \"taskkill /PID 1936 /F\")"
     ]
   }
 }

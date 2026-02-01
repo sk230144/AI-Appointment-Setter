@@ -6,6 +6,8 @@ const { validatePagination } = require('../utils/validators');
  * Get all appointments with optional filtering
  * GET /api/appointments
  */
+
+//test the git hub 
 async function getAllAppointments(req, res) {
   try {
     console.log('📋 GET /api/appointments');

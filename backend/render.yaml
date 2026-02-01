@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: appointment-booking-api
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: TWILIO_ACCOUNT_SID
+        sync: false
+      - key: TWILIO_AUTH_TOKEN
+        sync: false
+      - key: TWILIO_PHONE_NUMBER
+        sync: false
+      - key: BUSINESS_NAME
+        value: Your Business Name
+      - key: MORNING_START
+        value: "09:00"
+      - key: MORNING_END
+        value: "12:00"
+      - key: AFTERNOON_START
+        value: "14:00"
+      - key: AFTERNOON_END
+        value: "17:00"
+      - key: SLOT_DURATION
+        value: "30"
+      - key: TIMEZONE
+        value: America/New_York
+      - key: FRONTEND_URL
+        sync: false

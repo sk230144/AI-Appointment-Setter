@@ -1,10 +1,12 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import { Calendar, Clock, Phone, Sparkles, TrendingUp, Users, CheckCircle2, ArrowRight } from 'lucide-react'
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
+  const router = useRouter()
 
   useEffect(() => {
     setMounted(true)
@@ -39,11 +41,17 @@ export default function Home() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
-              <button className="btn-gradient px-8 py-4 text-lg group">
+              <button
+                onClick={() => router.push('/dashboard')}
+                className="btn-gradient px-8 py-4 text-lg group cursor-pointer"
+              >
                 Get Started
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="glass-button px-8 py-4 text-lg">
+              <button
+                onClick={() => router.push('/appointments')}
+                className="glass-button px-8 py-4 text-lg cursor-pointer"
+              >
                 View Demo
               </button>
             </div>
